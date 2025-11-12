@@ -86,7 +86,7 @@ function cardHTML(movie) {
     <div class="card__info">
       <h2 class="card__title">Title: ${movie.Title}</h2>
       <h3 class="card__type">Type: ${movie.Type}</h2>
-      <h3 >Year: ${movie.Year}</h3>
+      <h3 >Year: ${movie.Year.endsWith("–") ? movie.Year.slice(0, -1).concat(" ", "(Ongoing)") : movie.Year}</h3>
     </div>  
    </div>  `;
 }
