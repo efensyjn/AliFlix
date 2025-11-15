@@ -41,7 +41,7 @@ function search(movieData) {
 async function userInterface() {
   if ((mainCount == 0)) {
     const data = await fetch(
-      `https://www.omdbapi.com/?i=tt3896198&apikey=c968a92&s=marvel`
+      `https://www.omdbapi.com/?apikey=c968a92&s=marvel`
     );
     const jsonData = await data.json();
     console.log(jsonData)
@@ -55,15 +55,15 @@ userInterface()
 
 async function main(movieData) {
   const data = await fetch(
-    `https://www.omdbapi.com/?i=tt3896198&apikey=c968a92&s=${movieData}`
+    `https://www.omdbapi.com/?apikey=c968a92&s=${movieData}`
   );
   const jsonData = await data.json();
-  if ((jsonData.Response = "False")) {
+  if ((jsonData.Response === "False")) {
     cardListEl.innerHTML = movieNotFound();
   }
   console.log(jsonData);
   spinnerEl.classList.remove("display-block");
-  if ((jsonData.Response = "True")) {
+  if ((jsonData.Response === "True")) {
     cardListEl.innerHTML = jsonData.Search.map((movie) => cardHTML(movie)).join(
       ""
     );
