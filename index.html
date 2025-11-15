@@ -29,7 +29,7 @@
               placeholder="Search movies"
               onchange="onSearchMovie(event)"
             />
-            <button class="button" onclick="search(inputEl.value)">
+            <button class="button" onclick="search()">
               <i class="fas fa-search header__link"></i>
             </button>
           </li>
@@ -39,8 +39,8 @@
         <h1 class="movie__searched">
           movie Searched: <span class="movie__searched--name"> </span>
         </h1>
+        <div class="loader" id="loader"></div>
         <div class="card-list">
-          <i class="fas fa-spinner"></i>
         </div>
       </main>
     </div>
